@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central Nini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="lockscreen">
+    <div class="fundo-bloqueio" id="fundo-bloqueio"></div>
+
+    <div class="estagio estagio-bloqueio" id="estagio-bloqueio">
+      <div class="relogio">
+        <div class="hora" id="hora">00:00</div>
+        <div class="data" id="data"></div>
+      </div>
+
+      <div class="media-widget">
+        <div class="media-info">
+          <div class="media-titulo">Com amor,</div>
+          <div class="media-artista">Victor Take de Andrade</div>
+        </div>
+      </div>
+
+      <div class="barra-inferior-login">
+        <span>POR</span>
+        <span>📶</span>
+        <span>🔋</span>
+      </div>
+    </div>
+
+    <div class="estagio estagio-login" id="estagio-login">
+      <div class="login-caixa">
+        <div class="avatar-login" id="avatar-login">
+          <img src="imagens/pfp-win.jpg" alt="">
+        </div>
+        <div class="nome-login" id="nome-login">nini linda</div>
+
+        <div class="campo-senha">
+          <input type="password" id="input-senha" placeholder="Senha" autocomplete="off">
+          <button id="btn-entrar" aria-label="Entrar">➜</button>
+        </div>
+        
+        <div class="esqueci-senha" id="btn-dica">Dica de senha</div>
+        <div class="dica-senha" id="dica-senha">slogan do exo</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pagina">
+    <div class="borda-decorativa esquerda">
+      <img src="stickers-100/vader.png" alt="" data-audio="audio-stickers/vader.m4a">
+      <img src="stickers-100/ravenclaw.png" alt="" data-audio="audio-stickers/ravenclaw.mp3">
+      <img src="stickers-100/L1485.png" alt="" data-audio="audio-stickers/exoexo.m4a">
+      <img src="stickers-100/gremio.png" alt="" data-audio="audio-stickers/gremio.mp3">
+      <img src="stickers-100/dont-blink.png" alt="" data-audio="audio-stickers/dont-blink.m4a">
+    </div>
+    <div class="borda-decorativa direita">
+      <img src="stickers-100/hello-kitty.png" alt="" data-audio="audio-stickers/hello-kitty.m4a">
+      <img src="stickers-100/michael-jackson.png" alt="" data-audio="audio-stickers/michael.mp3">
+      <img src="stickers-100/star.png" alt="" data-audio="audio-stickers/star.m4a">
+      <img src="stickers-100/exo.png" alt="" data-audio="audio-stickers/exo-wolf.m4a">
+      <img src="stickers-100/dalek.png" alt="" id="sticker-dalek">
+    </div>
+
+    <div class="titulo-pagina">to my sapphire star 💖✨</div>
+
+    <div id="palco">
+      <img src="imagens/bbh-photocard.png" id="photocard" class="photocard" alt="Photocard do Baekhyun">
+
+      <div id="envelope-wrap">
+        <div id="envelope-3d" class="envelope-3d">
+          <svg class="envelope-corpo" viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="252" height="162" rx="14" fill="#a9d6ff" stroke="#fff" stroke-width="4"/>
+            <rect x="14" y="60" width="232" height="96" rx="8" fill="#f4f9ff"/>
+            <polygon points="4,166 130,95 4,4" fill="#bfe0ff"/>
+            <polygon points="256,166 130,95 256,4" fill="#bfe0ff"/>
+          </svg>
+          <svg class="envelope-aba" viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="4,4 256,4 130,95" fill="#cfe8ff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="130" cy="55" r="16" fill="#ffffff"/>
+            <text x="130" y="61" font-size="18" text-anchor="middle">💌</text>
+          </svg>
+        </div>
+        <div class="envelope-legenda">clique pra abrir</div>
+      </div>
+
+      <div id="carta">
+        <button id="btn-fechar-carta" aria-label="Fechar carta">✕</button>
+        <h2>Para minha princesa, dona do meu coração</h2>
+        <p id="texto-carta">
+          bla bla bla
+        </p>
+        <div class="assinatura">com amor, seu futuro namorado 💙</div>
+        <button id="btn-cancoes">Te amo</button>
+      </div>
+
+      <div id="painel-playlist">
+        <img src="stickers-100/grogu.png" id="grogu-sticker" alt="Grogu">
+        <h3>airpod da coli &lt;3</h3>
+        <ul class="lista-musicas" id="lista-musicas"></ul>
+
+        <div class="player">
+          <div class="titulo-musica" id="titulo-musica">Selecione uma música</div>
+          <div class="artista-musica" id="artista-musica">—</div>
+
+          <input type="range" id="barra-tempo" class="barra-tempo" value="0" min="0" max="100" step="0.1">
+          <div class="tempos">
+            <span id="tempo-atual">0:00</span>
+            <span id="tempo-total">0:00</span>
+          </div>
+
+          <div class="controles">
+            <button id="btn-anterior" aria-label="Voltar">⏮</button>
+            <button id="btn-play" class="play-pause" aria-label="Play">▶</button>
+            <button id="btn-proximo" aria-label="Avançar">⏭</button>
+          </div>
+
+          <div class="volume-row">
+            🔈
+            <input type="range" id="barra-volume" min="0" max="1" step="0.01" value="0.8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
