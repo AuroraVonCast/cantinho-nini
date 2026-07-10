@@ -156,6 +156,8 @@ if (btnCancoes) {
   btnCancoes.addEventListener("click", () => {
     carta.classList.remove("aberta");
     
+    document.getElementById("media-widget").classList.add("playlist-ativa");
+    
     if (photocard) {
       photocardRevelado = true;
       photocard.classList.remove("espiando");
@@ -224,6 +226,12 @@ function carregarMusica(indice, tocarAutomatico) {
   tituloMusica.textContent = musica.titulo;
   artistaMusica.textContent = musica.artista;
 
+  document.getElementById("mini-capa").src = musica.capa;
+  document.getElementById("mini-titulo").textContent = musica.titulo;
+  document.getElementById("mini-artista").textContent = musica.artista;
+  
+  const miniBtnPlay = document.getElementById("mini-btn-play");
+
   [...listaMusicas.children].forEach((li, i) => {
     if (i === indiceAtual) {
       li.classList.add("ativa");
@@ -235,22 +243,44 @@ function carregarMusica(indice, tocarAutomatico) {
   if (tocarAutomatico) {
     audio.play().catch(() => {});
     btnPlay.textContent = "⏸";
+    miniBtnPlay.textContent = "⏸";
   } else {
     btnPlay.textContent = "▶";
+    miniBtnPlay.textContent = "▶";
+  }
+}
+
+function alternarPlayPause() {
+  const miniBtnPlay = document.getElementById("mini-btn-play");
+  if (audio.paused) {
+    audio.play().catch(() => {});
+    btnPlay.textContent = "⏸";
+    miniBtnPlay.textContent = "⏸";
+  } else {
+    audio.pause();
+    btnPlay.textContent = "▶";
+    miniBtnPlay.textContent = "▶";
   }
 }
 
 if (btnPlay) {
-  btnPlay.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play().catch(() => {});
-      btnPlay.textContent = "⏸";
-    } else {
-      audio.pause();
-      btnPlay.textContent = "▶";
-    }
-  });
+  btnPlay.addEventListener("click", alternarPlayPause);
 }
+
+document.getElementById("mini-btn-play").addEventListener("click", (e) => {
+  e.stopPropagation();
+  alternarPlayPause();
+});
+
+document.getElementById("mini-btn-anterior").addEventListener("click", (e) => {
+  e.stopPropagation();
+  carregarMusica(indiceAtual - 1, true);
+});
+
+document.getElementById("mini-btn-proximo").addEventListener("click", (e) => {
+  e.stopPropagation();
+  carregarMusica(indiceAtual + 1, true);
+});
 
 if (btnAnterior) btnAnterior.addEventListener("click", () => carregarMusica(indiceAtual - 1, true));
 if (btnProximo) btnProximo.addEventListener("click", () => carregarMusica(indiceAtual + 1, true));

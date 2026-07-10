@@ -679,3 +679,68 @@ button { font-family: inherit; cursor: pointer; }
   z-index: -1;
   pointer-events: none;
 }
+
+#mini-player {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.playlist-ativa #media-assinatura { display: none; }
+.playlist-ativa #mini-player { display: flex; }
+
+.mini-capa {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.mini-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.mini-titulo {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mini-artista {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mini-controles {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mini-controles button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  padding: 4px;
+}
+
+.mini-controles button:hover {
+  transform: scale(1.15);
+}
