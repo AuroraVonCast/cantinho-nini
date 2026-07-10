@@ -669,6 +669,34 @@ button { font-family: inherit; cursor: pointer; }
   accent-color: var(--azul-forte);
 }
 
+@media (max-width: 1440px) and (min-width: 721px) {
+  .borda-decorativa {
+    width: 100px;
+  }
+  
+  :root {
+    --tamanho-sticker-borda: 60px;
+  }
+
+  #palco.mostrando-playlist #envelope-wrap {
+    transform: translateX(-320px) scale(0.9);
+  }
+
+  #palco.mostrando-playlist #painel-playlist {
+    transform: translate(180px, -50%);
+  }
+
+  #carta {
+    width: 360px;
+    padding: 24px 20px 20px;
+  }
+
+  #painel-playlist {
+    width: 300px;
+    padding: 16px;
+  }
+}
+
 @media (max-width: 720px) {
   .photocard.revelado { width: 86vw; }
   #palco.mostrando-playlist #envelope-wrap { transform: translateY(-20vh) scale(0.7); }
