@@ -326,9 +326,14 @@ function bloquearTelaNovamente() {
     estagioBloqueio.classList.remove("oculto");
     estagioLogin.classList.remove("visivel");
     
-    if (inputSenha) inputSenha.value = "";
+    if (inputSenha) {
+      inputSenha.value = "";
+      inputSenha.blur();
+    }
+    
     dicaSenha.classList.remove("revelada");
     dicaSenha.classList.remove("erro-senha");
+    dicaSenha.textContent = "slogan do exo";
   }
 }
 
@@ -338,6 +343,22 @@ function resetarTimer() {
     timerInatividade = setTimeout(bloquearTelaNovamente, TEMPO_BLOQUEIO);
   }
 }
+
+window.addEventListener("keydown", (e) => {
+  const lockscreenAtiva = lockscreen && !lockscreen.classList.contains("abrindo");
+
+  if (lockscreenAtiva) {
+    if (e.key === "Enter" && !estagioBloqueio.classList.contains("oculto")) {
+      fundoBloqueio.classList.add("borrado");
+      estagioBloqueio.classList.add("oculto");
+      estagioLogin.classList.add("visivel");
+      setTimeout(() => inputSenha.focus(), 500);
+    }
+    else if (e.key === "Escape" && estagioLogin.classList.contains("visivel")) {
+      bloquearTelaNovamente(); // Já faz todo o trabalho de voltar pro relógio e limpar a senha
+    }
+  }
+});
 
 window.addEventListener("click", resetarTimer);
 window.addEventListener("touchstart", resetarTimer);
