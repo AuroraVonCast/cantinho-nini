@@ -36,6 +36,10 @@ button { font-family: inherit; cursor: pointer; }
   z-index: 50;
   overflow: hidden;
   background: linear-gradient(160deg, var(--azul-bebe-2) 0%, var(--rosa-bebe) 100%);
+  
+  transform: translateY(0) translateZ(0); 
+  will-change: transform, opacity; 
+  
   transition: transform 0.7s cubic-bezier(.65,0,.35,1), opacity 0.7s ease;
 }
 
@@ -52,12 +56,15 @@ button { font-family: inherit; cursor: pointer; }
   background-size: cover;
   background-position: center;
   filter: blur(0px) brightness(1);
-  transform: scale(1);
+  
+  transform: scale(1) translateZ(0); 
+  will-change: filter, transform; 
+  
   transition: filter 0.7s ease, transform 0.7s ease;
 }
 
 .fundo-bloqueio.borrado {
-  filter: blur(22px) brightness(0.65);
+  filter: blur(12px) brightness(0.65);
   transform: scale(1.06);
 }
 
@@ -101,7 +108,7 @@ button { font-family: inherit; cursor: pointer; }
   text-transform: capitalize;
 }
 
-.media-widget {
+#media-widget {
   position: absolute;
   bottom: 24px;
   left: 50%;
@@ -110,11 +117,11 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(20, 20, 25, 0.55);
-  backdrop-filter: blur(8px);
+  background-color: #77757b !important; 
+  backdrop-filter: none !important;
   border-radius: 12px;
   padding: 12px 32px;
-  color: #fff;
+  color: #ffffff !important;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
@@ -170,11 +177,10 @@ button { font-family: inherit; cursor: pointer; }
 .campo-senha {
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border-radius: 8px;
   padding: 6px 6px 6px 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-  backdrop-filter: blur(6px);
 }
 
 .campo-senha input {
@@ -288,7 +294,6 @@ button { font-family: inherit; cursor: pointer; }
   width: var(--tamanho-sticker-borda);
   height: var(--tamanho-sticker-borda);
   object-fit: contain;
-  filter: drop-shadow(0 3px 6px var(--sombra));
   animation: flutuar 6s ease-in-out infinite;
   pointer-events: auto !important;
   cursor: pointer !important;
@@ -338,7 +343,7 @@ button { font-family: inherit; cursor: pointer; }
   height: 170px;
   cursor: pointer;
   perspective: 900px;
-  filter: drop-shadow(0 10px 22px var(--sombra));
+  box-shadow: 0 10px 22px var(--sombra);
 }
 
 .envelope-corpo,
@@ -484,7 +489,8 @@ button { font-family: inherit; cursor: pointer; }
 
 .photocard.espiando {
   opacity: 1;
-  transform: translate(25%, -45%) rotate(12deg) scale(0.9);
+  transform: translate(12%, -42%) rotate(21deg) scale(1.0);
+  transition-delay: 0.4s;
 }
 
 .photocard.revelado {
