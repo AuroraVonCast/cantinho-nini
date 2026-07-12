@@ -36,10 +36,8 @@ button { font-family: inherit; cursor: pointer; }
   z-index: 50;
   overflow: hidden;
   background: linear-gradient(160deg, var(--azul-bebe-2) 0%, var(--rosa-bebe) 100%);
-  
   transform: translateY(0) translateZ(0); 
   will-change: transform, opacity; 
-  
   transition: transform 0.7s cubic-bezier(.65,0,.35,1), opacity 0.7s ease;
 }
 
@@ -56,10 +54,8 @@ button { font-family: inherit; cursor: pointer; }
   background-size: cover;
   background-position: center;
   filter: blur(0px) brightness(1);
-  
   transform: scale(1) translateZ(0); 
   will-change: filter, transform; 
-  
   transition: filter 0.7s ease, transform 0.7s ease;
 }
 
@@ -669,6 +665,67 @@ button { font-family: inherit; cursor: pointer; }
   accent-color: var(--azul-forte);
 }
 
+#braco-container {
+  position: absolute;
+  bottom: -50vh;
+  left: -20vw;
+  width: 300px;
+  height: 300px;
+  z-index: 20;
+  transition: transform 1.5s cubic-bezier(.65,0,.35,1);
+  pointer-events: none;
+}
+
+#braco-container.entrando {
+  transform: translate(35vw, -40vh); 
+}
+
+#img-mao {
+  position: absolute;
+  top: 0px;
+  left: -170px;
+  width: 450px;
+  z-index: 2;
+  transform: rotate(-35deg);
+}
+
+#img-garrafa-mao {
+  position: absolute;
+  top: -15px;
+  left: 70px;
+  width: 200px;
+  z-index: 1;
+  transform: rotate(0deg);
+  transition: opacity 0.1s;
+}
+
+#garrafa-mesa {
+  position: absolute;
+  bottom: 10vh; 
+  left: 20vw;   
+  width: 200px;
+  transform: rotate(0deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  filter: drop-shadow(0 10px 15px rgba(180, 120, 150, 0.25));
+}
+
+#garrafa-mesa.fixada {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+garrafa-mesa.fixada:hover {
+  transform: scale(1.08);
+}
+
+#palco.mostrando-playlist #envelope-wrap.empurrado {
+  transform: translate(-380px, -80px) scale(1.3) rotate(-2deg);
+}
+
 @media (max-width: 1440px) and (min-width: 721px) {
   .borda-decorativa {
     width: 100px;
@@ -680,6 +737,10 @@ button { font-family: inherit; cursor: pointer; }
 
   #palco.mostrando-playlist #envelope-wrap {
     transform: translateX(-320px) scale(0.9);
+  }
+
+  #palco.mostrando-playlist #envelope-wrap.empurrado {
+    transform: translate(-380px, -80px) scale(1.3) rotate(-2deg);
   }
 
   #palco.mostrando-playlist #painel-playlist {
@@ -700,8 +761,11 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 720px) {
   .photocard.revelado { width: 86vw; }
   #palco.mostrando-playlist #envelope-wrap { transform: translateY(-20vh) scale(0.7); }
+  #palco.mostrando-playlist #envelope-wrap.empurrado { transform: translate(-380px, -80px) scale(1.3) rotate(-2deg); }
   #painel-playlist { right: 5vw; left: auto; top: auto; bottom: 4vh; transform: none; }
   #palco.mostrando-playlist #painel-playlist { right: 5vw; left: auto; transform: none; }
+  #braco-container.entrando { transform: translate(25vw, -55vh); }
+  #garrafa-mesa { bottom: 35vh; left: 20vw; }
 }
 
 #grogu-sticker {

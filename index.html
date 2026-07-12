@@ -10,22 +10,18 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div id="lockscreen">
     <div class="fundo-bloqueio" id="fundo-bloqueio"></div>
-
     <div class="estagio estagio-bloqueio" id="estagio-bloqueio">
       <div class="relogio">
         <div class="hora" id="hora">00:00</div>
         <div class="data" id="data"></div>
       </div>
-
       <div class="media-widget" id="media-widget">
         <div class="media-info" id="media-assinatura">
           <div class="media-texto">Feito com muito amor e carinho</div>
           <div class="media-nome">por Victor Take de Andrade</div>
         </div>
-
         <div class="mini-player" id="mini-player">
           <img src="" alt="Capa" id="mini-capa" class="mini-capa">
           <div class="mini-info">
@@ -39,32 +35,27 @@
           </div>
         </div>
       </div>
-
       <div class="barra-inferior-login">
         <span>POR</span>
         <span>📶</span>
         <span>🔋</span>
       </div>
     </div>
-
     <div class="estagio estagio-login" id="estagio-login">
       <div class="login-caixa">
         <div class="avatar-login" id="avatar-login">
           <img src="imagens/pfp-win.jpg" alt="">
         </div>
         <div class="nome-login" id="nome-login">nini linda</div>
-
         <div class="campo-senha">
           <input type="password" id="input-senha" placeholder="Senha" autocomplete="off">
           <button id="btn-entrar" aria-label="Entrar">➜</button>
         </div>
-        
         <div class="esqueci-senha" id="btn-dica">Dica de senha</div>
         <div class="dica-senha" id="dica-senha">slogan do exo</div>
       </div>
     </div>
   </div>
-
   <div id="pagina">
     <div class="borda-decorativa esquerda">
       <img src="stickers-100/vader.png" alt="" data-audio="audio-stickers/vader.m4a">
@@ -80,12 +71,9 @@
       <img src="stickers-100/exo.png" alt="" data-audio="audio-stickers/exo-wolf.m4a">
       <img src="stickers-100/dalek.png" alt="" id="sticker-dalek">
     </div>
-
     <div class="titulo-pagina">to my sapphire star 💖✨</div>
-
     <div id="palco">
       <img src="imagens/bbh-photocard.png" id="photocard" class="photocard" alt="Photocard do Baekhyun">
-
       <div id="envelope-wrap">
         <div id="envelope-3d" class="envelope-3d">
           <svg class="envelope-corpo" viewBox="0 0 260 170" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +90,6 @@
         </div>
         <div class="envelope-legenda">clique pra abrir</div>
       </div>
-
       <div id="carta">
         <button id="btn-fechar-carta" aria-label="Fechar carta">✕</button>
         <h2>Para minha princesa, dona do meu coração</h2>
@@ -117,39 +104,37 @@
         <div class="assinatura">com carinho, seu futuro namorado,<br>te amo!!</div>
         <button id="btn-cancoes">Canções 🎶💙</button>
       </div>
-
       <div id="painel-playlist">
         <img src="stickers-100/grogu.png" id="grogu-sticker" alt="Grogu">
         <h3>airpod da coli &lt;3</h3>
         <ul class="lista-musicas" id="lista-musicas"></ul>
-
         <div class="player">
           <div class="titulo-musica" id="titulo-musica">Selecione uma música</div>
           <div class="artista-musica" id="artista-musica">—</div>
-
           <input type="range" id="barra-tempo" class="barra-tempo" value="0" min="0" max="100" step="0.1">
           <div class="tempos">
             <span id="tempo-atual">0:00</span>
             <span id="tempo-total">0:00</span>
           </div>
-
           <div class="controles">
             <button id="btn-anterior" aria-label="Voltar">⏮</button>
             <button id="btn-play" class="play-pause" aria-label="Play">▶</button>
             <button id="btn-proximo" aria-label="Avançar">⏭</button>
           </div>
-
           <div class="volume-row">
             🔈
             <input type="range" id="barra-volume" min="0" max="1" step="0.01" value="0.8">
           </div>
         </div>
       </div>
+      <div id="braco-container">
+        <img src="imagens/mão.png" id="img-mao" alt="Mão">
+        <img src="imagens/garrafa.png" id="img-garrafa-mao" alt="Garrafa na mão">
+      </div>
+      <img src="imagens/garrafa.png" id="garrafa-mesa" alt="Garrafa na mesa" data-audio="audio-stickers/bebendo-agua.mp3">
     </div>
   </div>
-
   <audio id="audio"></audio>
-
   <script src="script.js"></script>
 </body>
 </html>

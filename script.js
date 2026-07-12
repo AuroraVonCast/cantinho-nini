@@ -39,6 +39,11 @@ const dicaSenha = document.getElementById("dica-senha");
 const btnDica = document.getElementById("btn-dica");
 const stickerDalek = document.getElementById("sticker-dalek");
 
+const bracoContainer = document.getElementById("braco-container");
+const imgGarrafaMao = document.getElementById("img-garrafa-mao");
+const garrafaMesa = document.getElementById("garrafa-mesa");
+const envelopeWrap = document.getElementById("envelope-wrap");
+
 let timerInatividade;
 const TEMPO_BLOQUEIO = 1000 * 60 * 10; 
 
@@ -168,7 +173,37 @@ if (btnCancoes) {
       envelope3d.classList.remove("aberto");
       palco.classList.add("mostrando-playlist");
       montarPlaylist();
+
+      setTimeout(() => {
+        if (bracoContainer) {
+          bracoContainer.classList.add("entrando");
+        }
+        
+        setTimeout(() => {
+          if (envelopeWrap) envelopeWrap.classList.add("empurrado");
+          
+          imgGarrafaMao.style.opacity = "0";
+          garrafaMesa.classList.add("fixada");
+          
+          setTimeout(() => {
+            bracoContainer.classList.remove("entrando");
+          }, 400);
+
+        }, 1500); 
+
+      }, 1000); 
+
     }, 500);
+  });
+}
+
+if (garrafaMesa) {
+  garrafaMesa.addEventListener("click", () => {
+    const caminhoAudio = garrafaMesa.getAttribute("data-audio");
+    if (caminhoAudio) {
+      const somAgua = new Audio(caminhoAudio);
+      somAgua.play().catch(() => {});
+    }
   });
 }
 
@@ -355,7 +390,7 @@ window.addEventListener("keydown", (e) => {
       setTimeout(() => inputSenha.focus(), 500);
     }
     else if (e.key === "Escape" && estagioLogin.classList.contains("visivel")) {
-      bloquearTelaNovamente(); // Já faz todo o trabalho de voltar pro relógio e limpar a senha
+      bloquearTelaNovamente(); 
     }
   }
 });
